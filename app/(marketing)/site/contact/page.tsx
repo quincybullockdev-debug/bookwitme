@@ -12,7 +12,7 @@ export default function ContactPage() {
       {/* Book With Us CTA button */}
       <div className="px-4 pb-12 md:pb-20 max-w-2xl md:max-w-3xl mx-auto">
         <a
-          href="/site/booking"
+          href="/booking"
           className="block text-center bg-black text-white py-3 rounded md:text-lg md:py-4"
         >
           Book With Us

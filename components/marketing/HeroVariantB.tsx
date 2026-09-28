@@ -28,7 +28,7 @@ export default function HeroVariantB() {
       {/* Book Now button, low in the viewport, sits over the gif */}
 
       <a
-        href="/site/booking"
+        href="/booking"
         className="mb-16 bg-white text-black px-6 py-3 rounded font-semibold z-20"
       >
         Book Now

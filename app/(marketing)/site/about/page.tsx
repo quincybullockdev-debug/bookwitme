@@ -22,7 +22,7 @@ export default function AboutPage() {
         />
 
         <a
-          href="/site/booking"
+          href="/booking"
           className="block text-center bg-black text-white py-3 rounded"
         >
           Book With Us

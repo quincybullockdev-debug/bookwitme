@@ -68,7 +68,7 @@ export default function HomePageClient({ business }: { business: any }) {
       {/* Book With Us CTA — standalone section between work showcase and reviews */}
       <section className="px-4 py-16 md:py-24 text-center">
         <a
-          href="/site/booking"
+          href="/booking"
           className="inline-block bg-black text-white px-8 md:px-12 py-4 md:py-5 rounded font-semibold md:text-lg"
         >
           Book With Us
@@ -140,7 +140,7 @@ export default function HomePageClient({ business }: { business: any }) {
       {/* Book Online button */}
       <div className="px-4 pb-8 text-center">
         <a
-          href="/site/booking"
+          href="/booking"
           className="inline-block bg-black text-white px-8 py-3 rounded font-semibold"
         >
           Book Online

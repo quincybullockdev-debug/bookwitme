@@ -44,11 +44,11 @@ export default function Header() {
           {isSticky ? (
             // Sticky state: nav on the left, no logo
             <nav className="flex gap-6 md:gap-8 md:text-lg">
-              <a href="/site">Home</a>
-              <a href="/site/services">Services</a>
-              <a href="/site/about">About</a>
-              <a href="/site/contact">Contact</a>
-              <a href="/site/policies">Policies</a>
+              <a href="/">Home</a>
+              <a href="/services">Services</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+              <a href="/policies">Policies</a>
             </nav>
           ) : (
             // Normal state: logo centered
@@ -60,7 +60,7 @@ export default function Header() {
           {isSticky && (
             // Sticky state only: Book Appointment button on the right
             <a
-              href="/site/booking"
+              href="/booking"
               className="ml-auto bg-black text-white px-4 py-2 md:px-6 md:py-3 rounded"
             >
               Book Appointment

@@ -62,7 +62,7 @@ export default function BookingDrawer({
     if (result.error) {
       setSubmitError(result.error);
     } else {
-      router.push(`/site/booking/confirmation/${result.bookingId}`);
+      router.push(`/booking/confirmation/${result.bookingId}`);
     }
   }
 
