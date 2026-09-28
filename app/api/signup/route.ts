@@ -104,8 +104,8 @@ export async function POST(req: Request) {
       { price: "price_1UEclY85XvaDUdCrkLM8MYOF", quantity: 1 }, // monthly subscription
     ],
     metadata: { business_id: business.id }, // lets the webhook know which business this payment belongs to
-    success_url: "http://localhost:3000/signup/success",
-    cancel_url: "http://localhost:3000/signup",
+    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/signup/success`,
+    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/signup`,
   });
 
   // sends the Stripe Checkout URL back to the form, which redirects the browser there
