@@ -1,11 +1,17 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+// your real domain, no "https://" or "www" — swap this for your actual domain
+const ROOT_DOMAIN = "bookwit.me";
+
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
-  // remove port (:3000), then remove .localhost part to get just the subdomain
-  const subdomain =
-    request.headers.get("host")?.split(":")[0].split(".")[0] || "";
+  const hostname = request.headers.get("host")?.split(":")[0] || "";
+  // root = exact match on your domain, or plain localhost — no subdomain in either case
+  const isRoot = hostname === ROOT_DOMAIN || hostname === "localhost";
+  const subdomain = isRoot
+    ? ""
+    : hostname.replace(`.${ROOT_DOMAIN}`, "").replace(".localhost", "");
   console.log("SUBDOMAIN:", subdomain);
 
   const supabase = createServerClient(
@@ -45,7 +51,7 @@ export async function middleware(request: NextRequest) {
     rewriteResponse.headers.set("x-business-id", business.id);
     rewriteResponse.headers.set("x-subdomain", subdomain);
     return rewriteResponse;
-  } else if (subdomain !== "localhost" && subdomain !== "") {
+  } else if (!isRoot && subdomain !== "") {
     // real subdomain typed, but no matching business
     const url = request.nextUrl.clone();
     url.pathname = "/business-not-found";
