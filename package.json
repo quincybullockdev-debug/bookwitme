@@ -9,9 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@daypicker/react": "^10.0.1",
+    "@fullcalendar/react": "^7.1.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
+    "date-fns": "^4.4.0",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "resend": "^6.28.1",
+    "stripe": "^22.6.2",
+    "temporal-polyfill": "^1.0.5",
+    "twilio": "^6.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
