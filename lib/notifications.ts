@@ -215,18 +215,18 @@ export async function notifyByBookingId(bookingId: string, type: string) {
     return;
   }
 
-  //just editor-level warnings, not breaking anything. 
+  //just editor-level warnings, not breaking anything.
   //That's a common Supabase quirk — it types joined tables as arrays by default, so TypeScript complains .name doesn't exist on an array
   await notifyCustomer(
     {
       id: booking.id,
       business_id: booking.business_id,
       customer_id: booking.customer_id,
-      customer_name: booking.customers?.name ?? "there",
-      customer_email: booking.customers?.email ?? "",
-      customer_phone: booking.customers?.phone ?? "",
-      business_name: booking.businesses?.name ?? "the business",
-      service_name: booking.services?.name ?? "your service",
+      customer_name: booking.customers?.[0]?.name ?? "there",
+      customer_email: booking.customers?.[0]?.email ?? "",
+      customer_phone: booking.customers?.[0]?.phone ?? "",
+      business_name: booking.businesses?.[0]?.name ?? "the business",
+      service_name: booking.services?.[0]?.name ?? "your service",
       start_time: booking.start_time,
     },
     type,
